@@ -22,24 +22,42 @@
 
 <div class="matches">
 
-<h2>Manchester United vs Chelsea</h2>
+<div class="matches">
 
-<button onclick="placeBet('Manchester United',1.80)">
-Manchester United - 1.80
-</button>
+<div class="match-card">
 
-<button onclick="placeBet('Chelsea',2.30)">
-Chelsea - 2.30
-</button>
+<h3>Manchester United vs Chelsea</h3>
 
-<h2>Barcelona vs Real Madrid</h2>
+<div class="odds-row">
+<button onclick="placeBet('Manchester United',1.80)">Manchester United</button>
+<span>1.80</span>
+</div>
 
-<button onclick="placeBet('Barcelona',1.90)">
-Barcelona - 1.90
-</button>
+<div class="odds-row">
+<button onclick="placeBet('Chelsea',2.30)">Chelsea</button>
+<span>2.30</span>
+</div>
 
-<button onclick="placeBet('Real Madrid',2.10)">
-Real Madrid - 2.10
+</div>
+
+
+<div class="match-card">
+
+<h3>Barcelona vs Real Madrid</h3>
+
+<div class="odds-row">
+<button onclick="placeBet('Barcelona',1.90)">Barcelona</button>
+<span>1.90</span>
+</div>
+
+<div class="odds-row">
+<button onclick="placeBet('Real Madrid',2.10)">Real Madrid</button>
+<span>2.10</span>
+</div>
+
+</div>
+
+</div>
 </button>
 
 </div>
@@ -65,3 +83,21 @@ Real Madrid - 2.10
 
 </body>
 </html>
+.match-card{
+background:#12264a;
+padding:15px;
+margin-bottom:20px;
+border-radius:8px;
+}
+
+.odds-row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:10px;
+}
+
+.odds-row button{
+flex:1;
+margin-right:10px;
+}
