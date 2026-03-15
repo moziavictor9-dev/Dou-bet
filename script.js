@@ -1,29 +1,17 @@
-function placeBet(team){
-    alert("Bet placed on " + team);
-}
-header{
-background:#111827;
-padding:20px;
-text-align:center;
+let betSlip = [];
+
+function placeBet(team, odd) {
+    betSlip.push({team: team, odd: odd});
+    displayBets();
 }
 
-.match{
-background:#1f2937;
-margin:20px;
-padding:20px;
-border-radius:10px;
-}
+function displayBets() {
+    let slip = document.getElementById("betSlip");
+    slip.innerHTML = "";
 
-button{
-background:#22c55e;
-border:none;
-padding:10px 15px;
-margin:5px;
-color:white;
-border-radius:5px;
-cursor:pointer;
-}
-
-button:hover{
-background:#16a34a;
+    betSlip.forEach(function(bet){
+        let item = document.createElement("p");
+        item.textContent = bet.team + " - " + bet.odd;
+        slip.appendChild(item);
+    });
 }
