@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE<!DOCTYPE html>
 <html>
-
 <head>
 <title>DOU Bet</title>
 <link rel="stylesheet" href="style.css">
@@ -8,9 +7,22 @@
 
 <body>
 
-<header>
 <h1>DOU Bet</h1>
-</header>
+
+<div class="container">
+
+<div class="sidebar">
+<h3>Leagues</h3>
+<p>English Premier League</p>
+<p>La Liga</p>
+<p>Serie A</p>
+<p>Bundesliga</p>
+<p>Champions League</p>
+</div>
+
+<div class="matches">
+
+<h2>Manchester United vs Chelsea</h2>
 
 <button onclick="placeBet('Manchester United',1.80)">
 Manchester United - 1.80
@@ -20,7 +32,7 @@ Manchester United - 1.80
 Chelsea - 2.30
 </button>
 
-</div>
+<h2>Barcelona vs Real Madrid</h2>
 
 <button onclick="placeBet('Barcelona',1.90)">
 Barcelona - 1.90
@@ -32,10 +44,8 @@ Real Madrid - 2.10
 
 </div>
 
-<script src="script.js"></script>
+<div class="betslip">
 
-</body>
-  </html>
 <h2>Bet Slip</h2>
 
 <div id="betSlip"></div>
@@ -46,3 +56,12 @@ Real Madrid - 2.10
 
 <p id="totalOdds"></p>
 <p id="potentialWin"></p>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
