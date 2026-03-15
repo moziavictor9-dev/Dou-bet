@@ -1,36 +1,54 @@
-let betSlip = [];
+let bets = [];
 
-function placeBet(team, odd) {
-    betSlip.push({team: team, odd: odd});
-    displayBets();
+function placeBet(team, odds){
+
+bets.push({team:team, odds:odds});
+
+updateBetSlip();
+
 }
 
-function displayBets() {
-    let slip = document.getElementById("betSlip");
-    slip.innerHTML = "";
+function updateBetSlip(){
 
-    betSlip.forEach(function(bet){
-        let item = document.createElement("p");
-        item.textContent = bet.team + " - " + bet.odd;
-        slip.appendChild(item);
-    });
+let betSlip = document.getElementById("betSlip");
+betSlip.innerHTML = "";
+
+bets.forEach((bet,index)=>{
+
+betSlip.innerHTML += `
+<p>
+${bet.team} - ${bet.odds}
+<button onclick="removeBet(${index})">❌</button>
+</p>
+`;
+
+});
+
 }
 
-function calculateWinnings() {
+function removeBet(index){
 
-    let stake = document.getElementById("stake").value;
+bets.splice(index,1);
+updateBetSlip();
 
-    let totalOdds = 1;
+}
 
-    betSlip.forEach(function(bet){
-        totalOdds *= bet.odd;
-    });
+function calculateWinnings(){
 
-    let potentialWin = stake * totalOdds;
+let stake = document.getElementById("stake").value;
 
-    document.getElementById("totalOdds").textContent =
-        "Total Odds: " + totalOdds.toFixed(2);
+let totalOdds = 1;
 
-    document.getElementById("potentialWin").textContent =
-        "Potential Win: $" + potentialWin.toFixed(2);
-        }
+bets.forEach(bet=>{
+totalOdds *= bet.odds;
+});
+
+let win = stake * totalOdds;
+
+document.getElementById("totalOdds").innerText =
+"Total Odds: " + totalOdds.toFixed(2);
+
+document.getElementById("potentialWin").innerText =
+"Potential Win: $" + win.toFixed(2);
+
+}
