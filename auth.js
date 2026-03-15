@@ -5,12 +5,32 @@ function signup(){
 let username = document.getElementById("signupUser").value;
 let password = document.getElementById("signupPass").value;
 
-users.push({username,password});
+if(!username || !password){
+document.getElementById("authMessage").innerText =
+"Enter username and password";
+return;
+}
+
+let existingUser = users.find(u => u.username === username);
+
+if(existingUser){
+document.getElementById("authMessage").innerText =
+"Username already exists";
+return;
+}
+
+let newUser = {
+username: username,
+password: password,
+balance: 10000
+};
+
+users.push(newUser);
 
 localStorage.setItem("users", JSON.stringify(users));
 
 document.getElementById("authMessage").innerText =
-"Account created successfully";
+"Account created with ₦10,000 balance";
 
 }
 
