@@ -60,3 +60,29 @@ document.getElementById("potentialWin").innerText =
 "Potential Win: $" + win.toFixed(2);
 
 }
+function placeFinalBet(){
+
+if(bets.length === 0){
+alert("No bets selected");
+return;
+}
+
+let stake = document.getElementById("stake").value;
+
+if(!stake){
+alert("Enter a stake amount");
+return;
+}
+
+document.getElementById("betMessage").innerText =
+"Bet placed successfully!";
+
+bets = [];
+updateBetSlip();
+
+document.getElementById("stake").value = "";
+
+document.getElementById("totalOdds").innerText = "";
+document.getElementById("potentialWin").innerText = "";
+
+             }
