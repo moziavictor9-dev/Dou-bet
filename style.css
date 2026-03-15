@@ -1,32 +1,60 @@
 body{
-    font-family: Arial, sans-serif;
-    background-color:#0f172a;
-    color:white;
-    margin:0;
-    padding:0;
+background:#0b1a33;
+color:white;
+font-family:Arial;
+margin:0;
+padding:20px;
 }
 
-header{
-    background:#1e293b;
-    padding:15px;
-    text-align:center;
+h1{
+text-align:center;
+margin-bottom:30px;
 }
 
+/* Main layout */
 .container{
-    padding:20px;
+display:flex;
+gap:20px;
 }
 
-.match{
-    background:#1e293b;
-    padding:15px;
-    margin-bottom:15px;
-    border-radius:10px;
+/* Sidebar */
+.sidebar{
+width:200px;
+background:#12264a;
+padding:15px;
+border-radius:8px;
 }
 
+/* Matches section */
+.matches{
+flex:1;
+}
+
+/* Bet slip */
+.betslip{
+width:250px;
+background:#12264a;
+padding:15px;
+border-radius:8px;
+}
+
+/* Buttons */
 button{
-    background:#22c55e;
-    border:none;
-    padding:10px 15px;
-    border-radius:5px;
-    cursor:pointer;
+background:#2ecc71;
+border:none;
+padding:10px 15px;
+margin:5px;
+border-radius:5px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#27ae60;
+}
+
+/* Stake input */
+input{
+padding:8px;
+margin-top:10px;
 }
