@@ -2,9 +2,17 @@ let bets = [];
 
 function placeBet(team, odds){
 
+let exists = bets.find(bet => bet.team === team);
+
+if(exists){
+return;
+}
+
 bets.push({team:team, odds:odds});
 
 updateBetSlip();
+
+}
 
 }
 
