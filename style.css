@@ -58,3 +58,18 @@ input{
 padding:8px;
 margin-top:10px;
 }
+@media (max-width: 768px){
+
+.container{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+}
+
+.betslip{
+width:100%;
+}
+
+  }
